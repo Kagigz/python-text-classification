@@ -1,2 +1,62 @@
-# python-text-classification
-Building a dataset from CosmosDB documents, training a text classification model, saving it in Azure Blob Storage
+# Python Text Classification
+
+This sample shows how to:
+- Build a dataset with contents retrieved from **CosmosDB**
+- Train a text classification model in Python using **sklearn** and **SpaCy**
+- Use a model stored in **Azure Blob Storage** to get a prediction
+
+The modules *model_helpers* and *azure_storage_helpers* in this repo can be used independently.
+
+## Run the sample
+
+1. Install the following libraries used if you don't already have them installed by running `pip install {name of library}`:
+    - pickle
+    - spacy
+    - nltk
+    - azure-cosmos
+    - azure-storage-blob
+    - pandas
+    
+2. Make sure you have a CosmosDB database set up with data in it
+
+    Dataset is to come, but the expected format in this sample is:
+    ```
+    {...
+     pages:[{
+            ...
+            sections:[{
+                      ...
+                      text:''
+                      label:''
+                      },
+                      ...
+                      ]
+           },
+           ...
+           ]
+    }
+    ```
+    You can of course use your own data, in this case make some changes to the dataset building in *model_train.py*
+  
+3. Make sure you have an Azure Storage account set up
+
+4. In *model_train.py*, replace the values in **cosmosConfig** and **blobConfig** with your own
+
+5. Run `python .\model_train.py`
+
+6. In *get_predict.py*, replace the values in **blobConfig** with your own
+
+7. In *get_predict.py*, replace the text to get a prediction for
+
+8. Run `python .\get_predict.py`
+
+
+## Use the modules independently
+
+- If you need to upload/retrieve files from CosmosDB or Azure Blob Storage in python, *azure_storage_helpers.py* is all you need
+
+- If you want to perform text processing (normalize text and remove stop words), you can use *text_processing.py*
+
+- If you want to train a classification model using sklearn, *model_helpers* is what you're looking for
+
+
