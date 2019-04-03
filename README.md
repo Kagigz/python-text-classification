@@ -5,7 +5,7 @@ This sample shows how to:
 - Train a text classification model in Python using **sklearn** and **SpaCy**
 - Use a model stored in **Azure Blob Storage** to get a prediction
 
-The modules *model_helpers* and *azure_storage_helpers* in this repo can be used independently.
+The modules *model_helpers*, *text_processing* and *azure_storage_helpers* in this repo can be used independently.
 
 ## Run the sample
 
