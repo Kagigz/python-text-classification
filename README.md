@@ -10,12 +10,12 @@ The modules *model_helpers*, *text_processing* and *azure_storage_helpers* in th
 ## Run the sample
 
 1. Install the following libraries used if you don't already have them installed by running `pip install {name of library}`:
-    - pickle
     - spacy
     - nltk
     - azure-cosmos
     - azure-storage-blob
     - pandas
+    - sklearn
     
 2. Make sure you have a CosmosDB database set up with data in it
 
